@@ -18,7 +18,6 @@ public class HomeController {
     @Autowired
     RentalService rentalService;
 
-    public static void hentmig(){
-    }
+
 
 }
