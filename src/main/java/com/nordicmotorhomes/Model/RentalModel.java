@@ -1,4 +1,4 @@
 package com.nordicmotorhomes.Model;
 
-public class Employee {
+public class RentalModel {
 }
