@@ -14,9 +14,10 @@ public class MotorhomeRepo{
     @Autowired
     JdbcTemplate jdbcTemplate;
     public List<Motorhome> loadAllMotorhomes(){
-        String sql="SELECT * FROM motorhomes";
+        String sql="SELECT * FROM motorhomes JOIN motorhomemodels USING (modelid)";
         RowMapper<Motorhome> rowMapper=new BeanPropertyRowMapper<>(Motorhome.class);
-        return jdbcTemplate.query(sql,rowMapper);
+        List<Motorhome> motorhomeList=jdbcTemplate.query(sql,rowMapper);
+        return motorhomeList;
     }
     public void createMotorhome(Motorhome motorhome){
 
