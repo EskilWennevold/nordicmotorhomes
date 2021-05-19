@@ -5,7 +5,9 @@ public class Motorhome {
     private int price;
     private String brand;
     private String model;
-    private int bed;
+    private int beds;
+    private int modelid;
+    private int platenumber;
 
     public Motorhome(){}
 
@@ -41,11 +43,27 @@ public class Motorhome {
         this.model = model;
     }
 
-    public int getBed() {
-        return bed;
+    public int getModelid() {
+        return modelid;
     }
 
-    public void setBed(int bed) {
-        this.bed = bed;
+    public void setModelid(int modelid) {
+        this.modelid = modelid;
+    }
+
+    public int getBeds() {
+        return beds;
+    }
+
+    public void setBeds(int beds) {
+        this.beds = beds;
+    }
+
+    public int getPlatenumber() {
+        return platenumber;
+    }
+
+    public void setPlatenumber(int platenumber) {
+        this.platenumber = platenumber;
     }
 }
