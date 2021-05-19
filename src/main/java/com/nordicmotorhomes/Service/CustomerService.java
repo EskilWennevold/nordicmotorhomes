@@ -14,14 +14,14 @@ public class CustomerService {
 
     public List<Customer> loadAllCustomers(){ return customerRepo.loadAllCustomers(); }
 
-    public Customer createCustomer(Customer customer){ return customerRepo.createCustomer(customer); }
+    public void createCustomer(Customer customer){ customerRepo.createCustomer(customer); }
 
     public Customer readCustomer(int id){ return customerRepo.readCustomer(id); }
 
-    public Customer updateCustomer(int id,Customer customer){ return customerRepo.updateCustomer(id,customer); }
+    public void updateCustomer(int id,Customer customer){ customerRepo.updateCustomer(id,customer); }
 
-    public boolean deleteCustomer(int id){
-        return customerRepo.deleteCustomer(id);
+    public void deleteCustomer(int id){
+        customerRepo.deleteCustomer(id);
     }
 
 }
