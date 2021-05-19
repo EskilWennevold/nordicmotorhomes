@@ -1,5 +1,4 @@
 package com.nordicmotorhomes.Model;
 
-public abstract class PersonModel {
-
+public class Rental {
 }
