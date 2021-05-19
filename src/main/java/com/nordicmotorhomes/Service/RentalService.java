@@ -1,6 +1,6 @@
 package com.nordicmotorhomes.Service;
 
-import com.nordicmotorhomes.Repo.RentalRepo;
+import com.nordicmotorhomes.Repository.RentalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

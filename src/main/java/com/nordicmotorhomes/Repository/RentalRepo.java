@@ -1,4 +1,4 @@
-package com.nordicmotorhomes.Repo;
+package com.nordicmotorhomes.Repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
