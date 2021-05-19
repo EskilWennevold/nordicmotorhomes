@@ -7,14 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class HomeController {
+public class HomeController{
     @Autowired
     CustomerService customerService;
     @Autowired
     MotorhomeService motorhomeService;
     @Autowired
     RentalService rentalService;
-
 
 
 }
