@@ -1,6 +1,5 @@
 package com.nordicmotorhomes.Service;
 
-import com.nordicmotorhomes.Model.Customer;
 import com.nordicmotorhomes.Model.Motorhome;
 import com.nordicmotorhomes.Repository.MotorhomeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,5 @@ public class MotorhomeService {
 
     public void updateMotorhome(int id,Motorhome motorhome){ motorhomeRepo.updateMotorhome(id,motorhome); }
 
-    public void deleteMotorhome(int id){
-         motorhomeRepo.deleteMotorhome(id);
-    }
+    public void deleteMotorhome(int id){ motorhomeRepo.deleteMotorhome(id); }
 }
