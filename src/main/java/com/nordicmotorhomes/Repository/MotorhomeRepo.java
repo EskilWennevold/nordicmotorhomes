@@ -14,16 +14,16 @@ public class MotorhomeRepo {
     public List<Motorhome> loadAllMotorhomes(){
         return null;
     }
-    public void createCustomer(Motorhome motorhome){
+    public void createMotorhome(Motorhome motorhome){
 
     }
-    public Motorhome readCustomer(int motorhomeid){
+    public Motorhome readMotorhome(int motorhomeid){
         return null;
     }
-    public void updateCustomer(int motorhomeid,Motorhome motorhome){
+    public void updateMotorhome(int motorhomeid,Motorhome motorhome){
 
     }
-    public void deleteCustomer(int motorhomeid){
+    public void deleteMotorhome(int motorhomeid){
 
     }
 }

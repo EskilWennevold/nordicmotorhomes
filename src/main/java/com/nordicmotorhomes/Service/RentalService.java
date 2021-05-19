@@ -14,13 +14,13 @@ public class RentalService {
 
     public List<Rental> loadAllRentals(){ return rentalRepo.loadAllRentals(); }
 
-    public Rental createRental(Rental rental){ return rentalRepo.createRental(rental); }
+    public void createRental(Rental rental){ rentalRepo.createRental(rental); }
 
     public Rental readRental(int id){ return rentalRepo.readRental(id); }
 
-    public Rental updateRental(int id,Rental rental){ return rentalRepo.updateRental(id,rental); }
+    public void updateRental(int id,Rental rental){ rentalRepo.updateRental(id,rental); }
 
-    public boolean deleteRental(int id){
-        return rentalRepo.deleteRental(id);
+    public void deleteRental(int id){
+        rentalRepo.deleteRental(id);
     }
 }

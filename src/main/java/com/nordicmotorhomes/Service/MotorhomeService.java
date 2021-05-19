@@ -15,13 +15,13 @@ public class MotorhomeService {
 
     public List<Motorhome> loadAllMotorhomes(){ return motorhomeRepo.loadAllMotorhomes(); }
 
-    public Motorhome createMotorhome(Motorhome motorhome){ return motorhomeRepo.createMotorhome(motorhome); }
+    public void createMotorhome(Motorhome motorhome){ motorhomeRepo.createMotorhome(motorhome); }
 
     public Motorhome readMotorhome(int id){ return motorhomeRepo.readMotorhome(id); }
 
-    public Motorhome updateMotorhome(int id,Motorhome motorhome){ return motorhomeRepo.updateMotorhome(id,motorhome); }
+    public void updateMotorhome(int id,Motorhome motorhome){ motorhomeRepo.updateMotorhome(id,motorhome); }
 
-    public boolean deleteMotorhome(int id){
-        return motorhomeRepo.deleteMotorhome(id);
+    public void deleteMotorhome(int id){
+         motorhomeRepo.deleteMotorhome(id);
     }
 }
