@@ -14,7 +14,7 @@ public class MotorhomeRepo{
     @Autowired
     JdbcTemplate jdbcTemplate;
     public List<Motorhome> loadAllMotorhomes(){
-        String sql="SELECT * FROM motorhomes JOIN motorhomemodels USING (modelid)";
+        String sql="SELECT * FROM motorhomes JOIN motorhomemodel USING (modelid)";
         RowMapper<Motorhome> rowMapper=new BeanPropertyRowMapper<>(Motorhome.class);
         List<Motorhome> motorhomeList=jdbcTemplate.query(sql,rowMapper);
         return motorhomeList;

@@ -6,9 +6,6 @@
 }
 body
 {
-    background-image: url(backgroundPicture.png);
-    background-size: cover;
-    background-position: center;
     font-family: sans-serif;
 }
 .menu-bar
