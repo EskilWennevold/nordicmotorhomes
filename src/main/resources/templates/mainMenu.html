@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Nordic Motorhomes</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Nordic Motorhomes</h1>
-    <br>
-    <h2>Hovedmenu</h2>
-    <br>
-    <form action="/motorhomeMenu" method="get">
-        <button>Motorhomemenu</button>
-    </form>
-    <br>
-    <form action="/customerMenu" method="get">
-        <button>Kundemenu</button>
-    </form>
-    <br>
-    <form action="/rentalMenu" method="get">
-        <button>Udlejningsmenu</button>
-    </form>
+    <div class="menu-bar">
+        <ul>
+            <li class="active"><a href="/">Hoved Menu</a></li>
+            <li><a href="/motorhomeMenu">Motorhome Menu</a></li>
+            <li><a href="/customerMenu">Kunde Menu</a></li>
+            <li><a href="/rentalMenu">Udlejnings Menu</a></li>
+        </ul>
+    </div>
+
+
 </body>
 </html>
