@@ -6,6 +6,9 @@
 }
 body
 {
+    background-image: url("rv-2788677_1920.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: sans-serif;
 }
 h1
