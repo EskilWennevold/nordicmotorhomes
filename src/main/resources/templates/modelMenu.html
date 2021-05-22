@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Nordic Motorhomes - Motorhomemenu</title>
+    <title>Nordic Motorhomes - Model Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,5 +16,26 @@
             <li class="active"><a href="/modelMenu">Model Menu</a></li>
         </ul>
     </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Modelid</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Beds</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="model: ${models}" title="Click to View">
+                <td th:text="${model.modelid}"/>
+                <td th:text="${model.brand}"/>
+                <td th:text="${model.model}"/>
+                <td th:text="${model.price}"/>
+                <td th:text="${model.beds}"/>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
