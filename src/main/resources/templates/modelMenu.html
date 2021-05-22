@@ -22,7 +22,10 @@
     </div>
 
     <a href="/createMotorhomemodel">
-        <button>Add New Model</button>
+        <button>
+            <i class="fas fa-plus-square"></i>
+            Add New Model
+        </button>
     </a>
     <table class="tableMenu">
         <thead>
@@ -32,6 +35,7 @@
                 <th>Model</th>
                 <th>Beds</th>
                 <th>Price</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -39,8 +43,28 @@
                 <td th:text="${model.modelid}"/>
                 <td th:text="${model.brand}"/>
                 <td th:text="${model.model}"/>
-                <td th:text="${model.price}"/>
                 <td th:text="${model.beds}"/>
+                <td th:text="${model.price}"/>
+                <td>
+                    <a th:href="@{'/viewMotorhomemodel/'+${model.modelid}}">
+                        <button>
+                            <i class="fas fa-info-circle"></i>
+                            View Info
+                        </button>
+                    </a>
+                    <a th:href="@{'/updateMotorhomemodel/'+${model.modelid}}">
+                        <button>
+                            <i class="fas fa-edit"></i>
+                            Update
+                        </button>
+                    </a>
+                    <a th:href="@{'/deleteMotorhomemodel/'+${model.modelid}}">
+                        <button>
+                            <i class="fas fa-trash-alt"></i>
+                            Delete
+                        </button>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
