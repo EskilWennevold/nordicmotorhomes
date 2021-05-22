@@ -16,9 +16,9 @@ public class CustomerService {
 
     public void createCustomer(Customer customer){ customerRepo.createCustomer(customer); }
 
-    public Customer readCustomer(int id){ return customerRepo.readCustomer(id); }
+    public Customer readCustomer(int id){ return customerRepo.selectCustomer(id); }
 
-    public void updateCustomer(int id,Customer customer){ customerRepo.updateCustomer(id,customer); }
+    public void updateCustomer(int id,Customer customer){ customerRepo.updateCustomer(customer); }
 
     public void deleteCustomer(int id){
         customerRepo.deleteCustomer(id);

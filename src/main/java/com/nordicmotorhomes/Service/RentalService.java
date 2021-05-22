@@ -18,7 +18,7 @@ public class RentalService {
 
     public Rental readRental(int id){ return rentalRepo.readRental(id); }
 
-    public void updateRental(int id,Rental rental){ rentalRepo.updateRental(id,rental); }
+    public void updateRental(Rental rental){ rentalRepo.updateRental(rental); }
 
     public void deleteRental(int id){
         rentalRepo.deleteRental(id);

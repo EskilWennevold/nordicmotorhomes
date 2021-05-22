@@ -1,6 +1,7 @@
 package com.nordicmotorhomes.Repository;
 
 import com.nordicmotorhomes.Model.Motorhome;
+import com.nordicmotorhomes.Model.MotorhomeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,21 +15,26 @@ public class MotorhomeRepo{
     @Autowired
     JdbcTemplate jdbcTemplate;
     public List<Motorhome> loadAllMotorhomes(){
-        String sql="SELECT * FROM motorhomes JOIN motorhomemodel USING (modelid)";
+        String sql="SELECT * FROM motorhomes";
         RowMapper<Motorhome> rowMapper=new BeanPropertyRowMapper<>(Motorhome.class);
         List<Motorhome> motorhomeList=jdbcTemplate.query(sql,rowMapper);
         return motorhomeList;
     }
-    public void createMotorhome(Motorhome motorhome){
-
+    public void createMotorhome(Motorhome m){
+        String sql="INSERT INTO motorhomes (modelid,platenumber) VALUES (?,?,?,?)";
+        jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber());
     }
-    public Motorhome readMotorhome(int motorhomeid){
-        return null;
+    public Motorhome selectMotorhome(int id){
+        String sql="SELECT * FROM motorhomes WHERE motorhomeid = ?";
+        RowMapper<Motorhome> rowMapper=new BeanPropertyRowMapper<>(Motorhome.class);
+        return jdbcTemplate.queryForObject(sql,rowMapper,id);
     }
-    public void updateMotorhome(int motorhomeid,Motorhome motorhome){
-
+    public void updateMotorhome(Motorhome m){
+        String sql="UPDATE motorhomes SET modelid=?,platenumber=? WHERE motorhomeid = ?";
+        jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber(),m.getMotorhomeid());
     }
-    public void deleteMotorhome(int motorhomeid){
-
+    public void deleteMotorhome(int id){
+        String sql="DELETE FROM motorhomes WHERE motorhomeid = ?";
+        jdbcTemplate.update(sql,id);
     }
 }

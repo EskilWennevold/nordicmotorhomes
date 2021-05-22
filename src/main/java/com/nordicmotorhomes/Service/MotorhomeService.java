@@ -16,9 +16,9 @@ public class MotorhomeService {
 
     public void createMotorhome(Motorhome motorhome){ motorhomeRepo.createMotorhome(motorhome); }
 
-    public Motorhome readMotorhome(int id){ return motorhomeRepo.readMotorhome(id); }
+    public Motorhome readMotorhome(int id){ return motorhomeRepo.selectMotorhome(id); }
 
-    public void updateMotorhome(int id,Motorhome motorhome){ motorhomeRepo.updateMotorhome(id,motorhome); }
+    public void updateMotorhome(Motorhome motorhome){ motorhomeRepo.updateMotorhome(motorhome); }
 
     public void deleteMotorhome(int id){ motorhomeRepo.deleteMotorhome(id); }
 }
