@@ -40,4 +40,9 @@ public class HomeController{
         model.addAttribute("rentals",rentalService.loadAllRentals());
         return "/rentalMenu";
     }
+    @GetMapping("/modelMenu")
+    public String modelMenu(Model model){
+
+        return"/modelMenu";
+    }
 }
