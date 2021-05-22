@@ -37,7 +37,7 @@ public class HomeController{
 
     @GetMapping("/rentalMenu")
     public String rentalMenu(Model model){
-    //    model.addAttribute("rentals",rentalService.loadAllRentals());
+        model.addAttribute("rentals",rentalService.loadAllRentals());
         return "/rentalMenu";
     }
     @GetMapping("/modelMenu")
