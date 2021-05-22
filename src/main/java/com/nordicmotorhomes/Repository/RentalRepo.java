@@ -18,7 +18,9 @@ public class RentalRepo {
     @Autowired
     JdbcTemplate jdbcTemplate;
     public List<Rental> loadAllRentals(){
-        return null;
+        String sql="SELECT * FROM rentals";
+        RowMapper<Rental> rentalRowMapper = new BeanPropertyRowMapper<>(Rental.class);
+        return jdbcTemplate.query(sql,rentalRowMapper);
     }
     public void createRental(Rental r){
         String rentalSql="INSERT INTO rentals (customerid,motorhomeid,deliveryaddress,startdate,enddate,price,deliverydistance,season) VALUES (?,?,?,?,?,?,?,?)";
