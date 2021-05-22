@@ -20,7 +20,8 @@ h1
     text-align: center;
     color: white;
 }
-table{
+.tableMenu{
+    background-color: white;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
@@ -29,27 +30,26 @@ table{
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0 0 0 0.15);
 }
-table thead tr{
+.tableMenu thead tr{
     background-color: #009879;
     color: whitesmoke;
     text-align: left;
     font-weight: bold;
 }
-table th,
-table td{
+.tableMenu th,
+.tableMenu td{
     padding: 12px 15px;
 
 }
-table tr{
+.tableMenu tr{
     border-bottom: 1px solid gray;
 }
-table tr:nth-of-type(even){
+.tableMenu tr:nth-of-type(even){
     background-color: wheat;
 }
-table tr:nth-of-type(odd){
-    background-color: grey;
-}
-table tr:last-of-type{
+
+
+.tableMenu tr:last-of-type{
     border-bottom: 2px solid #009879;
 }
 .menu-bar
