@@ -26,22 +26,22 @@
     </a>
     <table class="tableMenu">
         <thead>
-        <tr>
-            <th>Modelid</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Beds</th>
-            <th>Price</th>
-        </tr>
+            <tr>
+                <th>Modelid</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Beds</th>
+                <th>Price</th>
+            </tr>
         </thead>
         <tbody>
-        <tr th:each="model: ${motorhomeModels}" title="Click to View">
-            <td th:text="${model.modelid}"/>
-            <td th:text="${model.brand}"/>
-            <td th:text="${model.model}"/>
-            <td th:text="${model.price}"/>
-            <td th:text="${model.beds}"/>
-        </tr>
+            <tr th:each="model: ${motorhomeModels}" title="Click to View">
+                <td th:text="${model.modelid}"/>
+                <td th:text="${model.brand}"/>
+                <td th:text="${model.model}"/>
+                <td th:text="${model.price}"/>
+                <td th:text="${model.beds}"/>
+            </tr>
         </tbody>
     </table>
 
