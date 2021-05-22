@@ -1,6 +1,7 @@
 package com.nordicmotorhomes.Controller;
 
 import com.nordicmotorhomes.Service.CustomerService;
+import com.nordicmotorhomes.Service.ModelService;
 import com.nordicmotorhomes.Service.MotorhomeService;
 import com.nordicmotorhomes.Service.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public class HomeController{
     MotorhomeService motorhomeService;
     @Autowired
     RentalService rentalService;
+    @Autowired
+    ModelService modelService;
 
     @GetMapping("/")
     public String mainMenu(){ return "/mainMenu"; }
