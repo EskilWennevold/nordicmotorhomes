@@ -19,4 +19,8 @@ public class MotorhomeModelRepo {
         List<MotorhomeModel> modelList=jdbcTemplate.query(sql,rowMapper);
         return modelList;
     }
+    public void createMotorhomeModel(MotorhomeModel m){
+        String sql="INSET INTO motorhomemodel (modelid,brand,model,price,beds) VALUES (?,?,?,?)";
+        jdbcTemplate.update(sql,m.getModelid(),m.getBrand(),m.getModel(),m.getPrice(),m.getBeds());
+    }
 }

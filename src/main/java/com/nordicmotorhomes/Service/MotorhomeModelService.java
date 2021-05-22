@@ -14,4 +14,7 @@ public class MotorhomeModelService {
     public List<MotorhomeModel> loadAllMotorhomeModels(){
         return motorhomeModelRepo.loadAllMotorhomeModels();
     }
+    public void createMotorhomeModel(MotorhomeModel motorhomeModel){
+        motorhomeModelRepo.createMotorhomeModel(motorhomeModel);
+    }
 }
