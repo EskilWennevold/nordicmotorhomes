@@ -18,9 +18,7 @@ public class HomeController{
     RentalService rentalService;
 
     @GetMapping("/")
-    public String mainMenu(){
-        return "/mainMenu";
-    }
+    public String mainMenu(){ return "/mainMenu"; }
 
     @GetMapping("/motorhomeMenu")
     public String motorhomeMenu(Model model){
