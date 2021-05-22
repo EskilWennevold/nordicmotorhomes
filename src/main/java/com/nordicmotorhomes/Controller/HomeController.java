@@ -45,4 +45,7 @@ public class HomeController{
         model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
         return"/modelMenu";
     }
+    @GetMapping("/createMotorhomemodel")
+    public String createMotorhomemodel(){ return"/createMotorhomemodel"; }
+
 }
