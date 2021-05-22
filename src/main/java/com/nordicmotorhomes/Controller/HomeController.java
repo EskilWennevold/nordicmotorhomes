@@ -1,7 +1,7 @@
 package com.nordicmotorhomes.Controller;
 
 import com.nordicmotorhomes.Service.CustomerService;
-import com.nordicmotorhomes.Service.ModelService;
+import com.nordicmotorhomes.Service.MotorhomeModelService;
 import com.nordicmotorhomes.Service.MotorhomeService;
 import com.nordicmotorhomes.Service.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class HomeController{
     @Autowired
     RentalService rentalService;
     @Autowired
-    ModelService modelService;
+    MotorhomeModelService motorhomeModelService;
 
     @GetMapping("/")
     public String mainMenu(){ return "/mainMenu"; }
@@ -42,7 +42,7 @@ public class HomeController{
     }
     @GetMapping("/modelMenu")
     public String modelMenu(Model model){
-
+        model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
         return"/modelMenu";
     }
 }
