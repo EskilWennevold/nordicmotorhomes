@@ -50,13 +50,25 @@ h1 {
 }
 /*Create Tabellerne*/
 .tableCreate{
+    margin-left: 350px;
+    margin-top: 3px;
     background-color: white;
     border-collapse: collapse;
     font-size: 0.9em;
-    min-width: 400px;
+    min-width: 600px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0 0 0 0.15);
+}
+.tableCreate thead tr{
+    background-color: #009879;
+    color: whitesmoke;
+    text-align: left;
+    font-weight: bold;
+}
+.tableCreate th,
+.tableCreate td{
+    padding: 12px 15px;
 }
 .tableCreate tr:nth-of-type(even){
     background-color: wheat;
@@ -127,6 +139,11 @@ h1 {
     border-radius: 10px;
     color: white;
 
+}
+.tilføjKnapPosition{
+    margin-top: 3px;
+    margin-left: 800px;
+    max-width: 200px;
 }
 /*Menu Headeren*/
 .menu-bar {
