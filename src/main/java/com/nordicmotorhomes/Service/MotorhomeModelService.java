@@ -17,8 +17,8 @@ public class MotorhomeModelService {
     public void createMotorhomeModel(MotorhomeModel motorhomeModel){
         motorhomeModelRepo.createMotorhomeModel(motorhomeModel);
     }
-    public MotorhomeModel selectMotorhomeModel(int id){
-        return motorhomeModelRepo.selectMotorhomeModel(id);
+    public MotorhomeModel viewMotorhomeModel(int id){
+        return motorhomeModelRepo.viewMotorhomeModel(id);
     }
     public void updateMotorhomeModel(MotorhomeModel motorhomeModel){
         motorhomeModelRepo.updateMotorhomeModel(motorhomeModel);

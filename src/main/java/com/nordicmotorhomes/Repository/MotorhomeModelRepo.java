@@ -22,7 +22,7 @@ public class MotorhomeModelRepo {
         String sql="INSERT INTO motorhomemodels (brand,model,price,beds) VALUES (?,?,?,?)";
         jdbcTemplate.update(sql,m.getBrand(),m.getModel(),m.getPrice(),m.getBeds());
     }
-    public MotorhomeModel selectMotorhomeModel(int id){
+    public MotorhomeModel viewMotorhomeModel(int id){
         String sql="SELECT * FROM motorhomemodels WHERE modelid = ?";
         RowMapper<MotorhomeModel> rowMapper=new BeanPropertyRowMapper<>(MotorhomeModel.class);
         return jdbcTemplate.queryForObject(sql,rowMapper,id);
