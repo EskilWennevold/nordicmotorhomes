@@ -17,6 +17,7 @@ h1 {
     text-align: center;
     color: white;
 }
+/*Tabellerne*/
 .tableMenu{
     margin-left: 350px;
     margin-top: 3px;
@@ -62,6 +63,7 @@ h1 {
 .tableCreate td{
     padding: 12px 15px;
 }
+/*Knapperne*/
 .addButtonPosition{
     margin-top: 30px;
     margin-left: 400px;
@@ -90,7 +92,7 @@ h1 {
     border-radius: 10px;
     color: white;
 }
-
+/*Menu Headeren*/
 .menu-bar {
     background: grey;
     text-align: center;
