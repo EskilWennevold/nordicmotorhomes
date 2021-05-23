@@ -20,6 +20,30 @@
             <li><a href="/modelMenu">Model Menu</a></li>
         </ul>
     </div>
+
+    <table class="tableView">
+        <thead>
+            <th></th>
+            <th></th>
+        </thead>
+
+            <tr>
+                <td><b>Motorhome Brand:</b></td>
+                <td><span th:text="${motorhomemodel.brand}" /></td>
+            </tr>
+            <tr>
+                <td><b>Motorhome Model:</b></td>
+                <td><span th:text="${motorhomemodel.model}" /></td>
+            </tr>
+            <tr>
+                <td><b>Antal Senge:</b></td>
+                <td><span th:text="${motorhomemodel.beds}" /></td>
+            </tr>
+            <tr>
+                <td><b>Prisen:</b></td>
+                <td><span th:text="${motorhomemodel.price}"/></td>
+            </tr>
+    </table>
 </div>
 
 <div class="footer">

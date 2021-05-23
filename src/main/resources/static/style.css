@@ -63,6 +63,36 @@ h1 {
 .tableCreate td{
     padding: 12px 15px;
 }
+.tableView{
+    margin-left: 380px;
+    margin-top: 20px;
+    background-color: white;
+    border-collapse: collapse;
+    font-size: 20px;
+    min-width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0 0 0 0.15);
+}
+.tableView thead tr{
+    background-color: #009879;
+    color: whitesmoke;
+    text-align: left;
+    font-weight: bold;
+}
+.tableView th,
+.tableView td{
+    padding: 12px 15px;
+}
+.tableView tr{
+    border-bottom: 1px solid gray;
+}
+.tableView tr:nth-of-type(even){
+    background-color: wheat;
+}
+.tableView tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
 /*Knapperne*/
 .addButtonPosition{
     margin-top: 30px;
