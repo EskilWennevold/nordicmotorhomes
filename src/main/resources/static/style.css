@@ -97,6 +97,7 @@ h1 {
 .addButtonPosition{
     margin-top: 30px;
     margin-left: 400px;
+    max-width: 200px;
 }
 .addButton{
     background: #58c423;
