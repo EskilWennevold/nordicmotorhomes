@@ -17,7 +17,7 @@ h1 {
     text-align: center;
     color: white;
 }
-/*Tabellerne*/
+/*Menu Tabellerne*/
 .tableMenu{
     margin-left: 350px;
     margin-top: 3px;
@@ -48,6 +48,7 @@ h1 {
 .tableMenu tr:last-of-type{
     border-bottom: 2px solid #009879;
 }
+/*Create Tabellerne*/
 .tableCreate{
     background-color: white;
     border-collapse: collapse;
@@ -63,6 +64,7 @@ h1 {
 .tableCreate td{
     padding: 12px 15px;
 }
+/*View Tabellerne*/
 .tableView{
     margin-left: 380px;
     margin-top: 20px;
