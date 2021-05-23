@@ -75,22 +75,25 @@ h1 {
     padding: 16px 30px;
     border-radius: 10px;
     color: white;
+
 }
 .normalButton{
     background: #2c6ed6;
-    display: block;
+    display: inline-flex;
     font-size: 16px;
     padding: 5px 10px;
     border-radius: 10px;
     color: white;
+
 }
 .deleteButton{
     background: #d61916;
-    display: block;
+    display: inline-flex;
     font-size: 16px;
     padding: 5px 10px;
     border-radius: 10px;
     color: white;
+
 }
 /*Menu Headeren*/
 .menu-bar {
