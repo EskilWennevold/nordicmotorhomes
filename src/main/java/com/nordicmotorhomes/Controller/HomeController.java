@@ -47,7 +47,8 @@ public class HomeController{
     }
     @GetMapping("/selectMotorhomemodel")
     public String selectMotorhomemodel(Model model){
-        model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
+        //model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
+        getModels(model);
         return "/selectMotorhomemodel";
     }
     @GetMapping("/createMotorhome/{modelid}")
@@ -63,10 +64,19 @@ public class HomeController{
     @GetMapping("/viewMotorhome/{motorhomeid}")
     public String viewMotorhome(@PathVariable("motorhomeid") int id, Model model){
         model.addAttribute("motorhome",motorhomeService.viewMotorhome(id));
+        Motorhome m = motorhomeService.viewMotorhome(id);
+        getModelById(model, m.getModelid());
         return "/viewMotorhome";
     }
 
     //--------------------------------------------Motorhome Models----------------------------------------------
+    public Model getModels(Model model){
+        return model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
+    }
+    public Model getModelById(Model model, int id){
+        return model.addAttribute("motorhomemodel",motorhomeModelService.viewMotorhomeModel(id));
+    }
+
     @GetMapping("/modelMenu")
     public String motorhomemodelMenu(Model model){
         model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
