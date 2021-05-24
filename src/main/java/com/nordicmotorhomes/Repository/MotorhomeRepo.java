@@ -25,7 +25,7 @@ public class MotorhomeRepo{
 
         jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber());
     }
-    public Motorhome selectMotorhome(int id){
+    public Motorhome viewMotorhome(int id){
         String sql="SELECT * FROM motorhomes WHERE motorhomeid = ?";
         RowMapper<Motorhome> rowMapper=new BeanPropertyRowMapper<>(Motorhome.class);
         return jdbcTemplate.queryForObject(sql,rowMapper,id);

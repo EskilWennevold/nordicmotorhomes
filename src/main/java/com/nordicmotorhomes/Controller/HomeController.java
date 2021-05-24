@@ -60,6 +60,11 @@ public class HomeController{
         motorhomeService.createMotorhome(m);
         return "redirect:/motorhomeMenu";
     }
+    @GetMapping("/viewMotorhome/{motorhomeid}")
+    public String viewMotorhome(@PathVariable("motorhomeid") int id, Model model){
+        model.addAttribute("motorhome",motorhomeService.viewMotorhome(id));
+        return "/viewMotorhome";
+    }
 
     //--------------------------------------------Motorhome Models----------------------------------------------
     @GetMapping("/modelMenu")
