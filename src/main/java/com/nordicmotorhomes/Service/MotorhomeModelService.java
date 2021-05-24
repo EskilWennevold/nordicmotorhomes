@@ -14,14 +14,14 @@ public class MotorhomeModelService {
     public List<MotorhomeModel> loadAllMotorhomeModels(){
         return motorhomeModelRepo.loadAllMotorhomeModels();
     }
-    public void createMotorhomeModel(MotorhomeModel motorhomeModel){
-        motorhomeModelRepo.createMotorhomeModel(motorhomeModel);
+    public void createMotorhomeModel(MotorhomeModel m){
+        motorhomeModelRepo.createMotorhomeModel(m);
     }
     public MotorhomeModel viewMotorhomeModel(int id){
         return motorhomeModelRepo.viewMotorhomeModel(id);
     }
-    public void updateMotorhomeModel(int id, MotorhomeModel motorhomeModel){
-        motorhomeModelRepo.updateMotorhomeModel(id, motorhomeModel);
+    public void updateMotorhomeModel(int id, MotorhomeModel m){
+        motorhomeModelRepo.updateMotorhomeModel(id, m);
     }
     public void deleteMotorhomeModel(int id){
         motorhomeModelRepo.deleteMotorhomeModel(id);

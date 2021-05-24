@@ -46,7 +46,7 @@ public class HomeController{
     }
     //--------------------------------------------Motorhome Models----------------------------------------------
     @GetMapping("/modelMenu")
-    public String modelMenu(Model model){
+    public String motorhomemodelMenu(Model model){
         model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
         return"/modelMenu";
     }
@@ -54,8 +54,8 @@ public class HomeController{
     public String createMotorhomemodel(){ return"/createMotorhomemodel"; }
 
     @PostMapping("/createMotorhomemodel")
-    public String createMotorhomemodel(@ModelAttribute MotorhomeModel motorhomeModel){
-        motorhomeModelService.createMotorhomeModel(motorhomeModel);
+    public String createMotorhomemodel(@ModelAttribute MotorhomeModel m){
+        motorhomeModelService.createMotorhomeModel(m);
         return "redirect:/modelMenu";
     }
     @GetMapping("/viewMotorhomemodel/{modelid}")
@@ -70,11 +70,10 @@ public class HomeController{
     }
 
     @PostMapping("/updateMotorhomemodel")
-    public String updateMotorhomemodel(@ModelAttribute MotorhomeModel motorhomeModel){
-        motorhomeModelService.updateMotorhomeModel(motorhomeModel.getModelid(), motorhomeModel);
+    public String updateMotorhomemodel(@ModelAttribute MotorhomeModel m){
+        motorhomeModelService.updateMotorhomeModel(m.getModelid(), m);
         return "redirect:/modelMenu";
     }
-
 
     @GetMapping("/deleteMotorhomemodel/{modelid}")
     public String deleteMotorhomemodel(@PathVariable("modelid") int id){
