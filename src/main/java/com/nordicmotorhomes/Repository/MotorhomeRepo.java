@@ -30,9 +30,14 @@ public class MotorhomeRepo{
         RowMapper<Motorhome> rowMapper=new BeanPropertyRowMapper<>(Motorhome.class);
         return jdbcTemplate.queryForObject(sql,rowMapper,id);
     }
-    public void updateMotorhome(Motorhome m){
+    public void updateMotorhome(int id, Motorhome m){
         String sql="UPDATE motorhomes SET modelid=?,platenumber=? WHERE motorhomeid = ?";
-        jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber(),m.getMotorhomeid());
+        jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber(), id);
+    }
+
+    public void updateMotorhome(int motorhomeid, int id){
+        String sql="UPDATE motorhomes SET modelid=? WHERE motorhomeid = ?";
+        jdbcTemplate.update(sql, id, motorhomeid);
     }
     public void deleteMotorhome(int id){
         String sql="DELETE FROM motorhomes WHERE motorhomeid = ?";

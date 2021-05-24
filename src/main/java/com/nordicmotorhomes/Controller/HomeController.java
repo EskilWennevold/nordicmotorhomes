@@ -25,6 +25,8 @@ public class HomeController{
     @Autowired
     MotorhomeModelService motorhomeModelService;
 
+    int motorhomeid = 0;
+
     @GetMapping("/")
     public String mainMenu(){ return "/mainMenu"; }
 
@@ -68,7 +70,33 @@ public class HomeController{
         getModelById(model, m.getModelid());
         return "/viewMotorhome";
     }
-
+    @GetMapping("/updateMotorhome/{motorhomeid}")
+    public String updateMotorhome(@PathVariable("motorhomeid") int id, Model model){
+        motorhomeid = id;
+        model.addAttribute("motorhome",motorhomeService.viewMotorhome(id));
+        return "/updateMotorhome";
+    }
+    @GetMapping("/selectMotorhomemodelUpdate")
+    public String updateMotorhome(Model model){
+            getModels(model);
+        return "/selectMotorhomemodelUpdate";
+    }
+    @GetMapping("/selectedUpdate/{modelid}")
+    public String selectedModelUpdate(@PathVariable("modelid") int id){
+        motorhomeService.updateMotorhome(motorhomeid, id);
+        motorhomeid = 0;
+        return "redirect:/motorhomeMenu";
+    }
+    @PostMapping("/updateMotorhome")
+    public String updateMotorhome(@ModelAttribute Motorhome m){
+        motorhomeService.updateMotorhome(m.getMotorhomeid(), m);
+        return "redirect:/motorhomeMenu";
+    }
+    @GetMapping("/deleteMotorhome/{motorhomeid}")
+    public String deleteMotorhome(@PathVariable("motorhomeid") int id){
+        motorhomeService.deleteMotorhome(id);
+        return "redirect:/motorhomeMenu";
+    }
     //--------------------------------------------Motorhome Models----------------------------------------------
     public Model getModels(Model model){
         return model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
