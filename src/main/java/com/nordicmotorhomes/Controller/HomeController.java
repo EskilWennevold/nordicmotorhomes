@@ -1,5 +1,6 @@
 package com.nordicmotorhomes.Controller;
 
+import com.nordicmotorhomes.Model.Motorhome;
 import com.nordicmotorhomes.Model.MotorhomeModel;
 import com.nordicmotorhomes.Service.CustomerService;
 import com.nordicmotorhomes.Service.MotorhomeModelService;
@@ -27,12 +28,6 @@ public class HomeController{
     @GetMapping("/")
     public String mainMenu(){ return "/mainMenu"; }
 
-    @GetMapping("/motorhomeMenu")
-    public String motorhomeMenu(Model model){
-        model.addAttribute("motorhomes",motorhomeService.loadAllMotorhomes());
-        return "/motorhomeMenu";
-    }
-
     @GetMapping("/customerMenu")
     public String customerMenu(Model model){
         model.addAttribute("customers",customerService.loadAllCustomers());
@@ -44,6 +39,28 @@ public class HomeController{
         model.addAttribute("rentals",rentalService.loadAllRentals());
         return "/rentalMenu";
     }
+    //--------------------------------------------Motorhomes----------------------------------------------------
+    @GetMapping("/motorhomeMenu")
+    public String motorhomeMenu(Model model){
+        model.addAttribute("motorhomes",motorhomeService.loadAllMotorhomes());
+        return "/motorhomeMenu";
+    }
+    @GetMapping("/selectMotorhomemodel")
+    public String selectMotorhomemodel(Model model){
+        model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
+        return "/selectMotorhomemodel";
+    }
+    @GetMapping("/createMotorhome/{modelid}")
+    public String createMotorhome(@PathVariable("modelid") int id, Model model){
+        model.addAttribute("motorhomemodel",motorhomeModelService.viewMotorhomeModel(id));
+        return "/createMotorhome";
+    }
+    @PostMapping("/createMotorhome")
+    public String createMotorhome(@ModelAttribute Motorhome m){
+        motorhomeService.createMotorhome(m);
+        return "redirect:/motorhomeMenu";
+    }
+
     //--------------------------------------------Motorhome Models----------------------------------------------
     @GetMapping("/modelMenu")
     public String motorhomemodelMenu(Model model){

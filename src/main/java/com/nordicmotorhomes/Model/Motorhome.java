@@ -3,7 +3,7 @@ package com.nordicmotorhomes.Model;
 public class Motorhome {
     private int motorhomeid;
     private int modelid;
-    private int platenumber;
+    private String platenumber;
 
     public Motorhome(){}
 
@@ -19,11 +19,11 @@ public class Motorhome {
 
     public void setModelid(int modelid) { this.modelid = modelid; }
 
-    public int getPlatenumber() {
+    public String getPlatenumber() {
         return platenumber;
     }
 
-    public void setPlatenumber(int platenumber) {
+    public void setPlatenumber(String platenumber) {
         this.platenumber = platenumber;
     }
 }

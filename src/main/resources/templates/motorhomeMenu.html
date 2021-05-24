@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Nordic Motorhomes - Motorhomemenu</title>
@@ -19,6 +19,57 @@
                 <li><a href="/modelMenu">Model Menu</a></li>
             </ul>
         </div>
+        <div class="addButtonPosition">
+            <a href="/selectMotorhomemodel">
+                <button class="addButton">
+                    <i class="fas fa-plus-square"></i>
+                    Opret Motorhome
+                </button>
+            </a>
+        </div>
+        <table class="tableMenu">
+            <thead>
+            <tr>
+                <th>Motorhome ID</th>
+                <th>Model ID</th>
+                <th>Registrerings Nummer</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="motorhome: ${motorhomes}" title="Click to View">
+                <td th:text="${motorhome.motorhomeid}"/>
+                <td th:text="${motorhome.modelid}"/>
+                <td th:text="${motorhome.platenumber}"/>
+                <td>
+                    <a th:href="@{'/viewMotorhome/'+${motorhome.motorhomeid}}">
+                        <button class="normalButton">
+                            <i class="fas fa-info-circle"></i>
+                            Se Info
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/updateMotorhome/'+${motorhome.motorhomeid}}">
+                        <button class="normalButton">
+                            <i class="fas fa-edit"></i>
+                            Opdater
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/deleteMotorhome/'+${motorhome.motorhomeid}}">
+                        <button class="deleteButton">
+                            <i class="fas fa-trash-alt"></i>
+                            Slet
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <div class="footer">
         <div class="inner_footer">

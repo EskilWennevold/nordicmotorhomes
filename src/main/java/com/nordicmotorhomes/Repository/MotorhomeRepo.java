@@ -21,7 +21,8 @@ public class MotorhomeRepo{
         return motorhomeList;
     }
     public void createMotorhome(Motorhome m){
-        String sql="INSERT INTO motorhomes (modelid,platenumber) VALUES (?,?,?,?)";
+        String sql="INSERT INTO motorhomes (modelid,platenumber) VALUES (?,?)";
+
         jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber());
     }
     public Motorhome selectMotorhome(int id){
