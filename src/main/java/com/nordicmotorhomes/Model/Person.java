@@ -6,6 +6,7 @@ public abstract class Person {
     private int phonenumber;
     private String address;
     private int zip;
+    private String cityname;
     private String email;
 
     public Person(){}
@@ -49,6 +50,10 @@ public abstract class Person {
     public void setZip(int zip) {
         this.zip = zip;
     }
+
+    public String getCityname() { return cityname; }
+
+    public void setCityname(String cityname) { this.cityname = cityname; }
 
     public String getEmail() {
         return email;

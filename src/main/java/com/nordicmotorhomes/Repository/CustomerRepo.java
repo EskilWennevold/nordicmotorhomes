@@ -20,11 +20,13 @@ public class CustomerRepo {
         return jdbcTemplate.query(sql,rowMapper);
     }
     public void createCustomer(Customer c){
-        String sql="INSERT INTO customers (firstname,lastname,phonenumber,address,zip,email) VALUES (?,?,?,?,?,?)";
-        jdbcTemplate.update(sql,c.getFirstname(),c.getLastname(),c.getPhonenumber(),c.getAddress(),c.getZip(),c.getEmail());
+        //String citySql="INSERT INTO cities (zip,city) VALUES (?,?) WHERE NOT EXIST (SELECT * FROM cities WHERE zip=? AND city=?)";
+        //jdbcTemplate.update(citySql,c.getZip(),c.getCity(),c.getZip(),c.getCity());
+        String customerSql="INSERT INTO customers (firstname,lastname,phonenumber,address,zip,email) VALUES (?,?,?,?,?,?)";
+        jdbcTemplate.update(customerSql,c.getFirstname(),c.getLastname(),c.getPhonenumber(),c.getAddress(),c.getZip(),c.getEmail());
     }
     public Customer selectCustomer(int id){
-        String sql="SELECT * FROM customers WHERE customerid = ?";
+        String sql="SELECT * FROM customers JOIN cities USING(zip) WHERE customerid = ?";
         RowMapper<Customer> rowMapper=new BeanPropertyRowMapper<>(Customer.class);
         return jdbcTemplate.queryForObject(sql,rowMapper,id);
     }

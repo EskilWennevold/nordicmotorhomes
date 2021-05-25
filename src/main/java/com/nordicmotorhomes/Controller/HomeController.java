@@ -1,5 +1,6 @@
 package com.nordicmotorhomes.Controller;
 
+import com.nordicmotorhomes.Model.Customer;
 import com.nordicmotorhomes.Model.Motorhome;
 import com.nordicmotorhomes.Model.MotorhomeModel;
 import com.nordicmotorhomes.Service.CustomerService;
@@ -29,12 +30,6 @@ public class HomeController{
 
     @GetMapping("/")
     public String mainMenu(){ return "/mainMenu"; }
-
-    @GetMapping("/customerMenu")
-    public String customerMenu(Model model){
-        model.addAttribute("customers",customerService.loadAllCustomers());
-        return "/customerMenu";
-    }
 
     @GetMapping("/rentalMenu")
     public String rentalMenu(Model model){
@@ -138,5 +133,43 @@ public class HomeController{
     public String deleteMotorhomemodel(@PathVariable("modelid") int id){
         motorhomeModelService.deleteMotorhomeModel(id);
             return "redirect:/modelMenu";
+    }
+    //--------------------------------------------Customers----------------------------------------------
+    @GetMapping("/customerMenu")
+    public String customerMenu(Model model){
+        model.addAttribute("customers",customerService.loadAllCustomers());
+        return "/customerMenu";
+    }
+
+    @GetMapping("/createCustomer")
+    public String createCustomer(){
+        return "/createCustomer";
+    }
+    @PostMapping("/createCustomer")
+    public String createCustomer(@ModelAttribute Customer c){
+        customerService.createCustomer(c);
+        return "redirect:/customerMenu";
+    }
+
+    @GetMapping("/viewCustomer/{customerid}")
+    public String viewCustomer(@PathVariable("customerid") int id, Model model){
+        model.addAttribute("customer",customerService.readCustomer(id));
+        return "/viewCustomer";
+    }
+
+    @GetMapping("/updateCustomer/{customerid}")
+    public String updateCustomer(@PathVariable("customerid") int id, Model model){
+        model.addAttribute("customer",customerService.readCustomer(id));
+        return "/updateCustomer";
+    }
+    @PostMapping("/updateCustomer")
+    public String updateCustomer(@ModelAttribute Customer c){
+        customerService.updateCustomer(c);
+        return "redirect:/customerMenu";
+    }
+    @GetMapping("/deleteCustomer/{customerid}")
+    public String deleteCustomer(@PathVariable("customerid") int id){
+        customerService.deleteCustomer(id);
+        return "redirect:/customerMenu";
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Nordic Motorhomes - Kundemenu</title>
@@ -19,6 +19,57 @@
                 <li><a href="/modelMenu">Model Menu</a></li>
             </ul>
         </div>
+        <div class="addButtonPosition">
+            <a href="/createCustomer">
+                <button class="addButton">
+                    <i class="fas fa-plus-square"></i>
+                    Opret Kunde
+                </button>
+            </a>
+        </div>
+        <table class="tableMenu">
+            <thead>
+            <tr>
+                <th>Kunde ID</th>
+                <th>Fornavn</th>
+                <th>Efternavn</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer: ${customers}" title="Click to View">
+                <td th:text="${customer.customerid}"/>
+                <td th:text="${customer.firstname}"/>
+                <td th:text="${customer.lastname}"/>
+                <td>
+                    <a th:href="@{'/viewCustomer/'+${customer.customerid}}">
+                        <button class="normalButton">
+                            <i class="fas fa-info-circle"></i>
+                            Se Info
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/updateCustomer/'+${customer.customerid}}">
+                        <button class="normalButton">
+                            <i class="fas fa-edit"></i>
+                            Opdater
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/deleteCustomer/'+${customer.customerid}}">
+                        <button class="deleteButton">
+                            <i class="fas fa-trash-alt"></i>
+                            Slet
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <div class="footer">
         <div class="inner_footer">
