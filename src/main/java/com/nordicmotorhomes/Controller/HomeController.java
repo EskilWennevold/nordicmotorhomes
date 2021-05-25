@@ -36,6 +36,9 @@ public class HomeController{
     public Model getMotorhomes(Model model){
         return model.addAttribute("motorhomes",motorhomeService.loadAllMotorhomes());
     }
+    public Model getMotorhomeById(Model model, int id){
+        return model.addAttribute("motorhome",motorhomeService.viewMotorhome(id));
+    }
 
     //MOTORHOME MENU
     @GetMapping("/motorhomeMenu")
@@ -161,6 +164,9 @@ public class HomeController{
     public Model getCustomers(Model model){
         return model.addAttribute("customers",customerService.loadAllCustomers());
     }
+    public Model getCustomerById(Model model, int id){
+        return model.addAttribute("customer",customerService.viewCustomer(id));
+    }
 
     //CUSTOMER MENU
     @GetMapping("/customerMenu")
@@ -239,13 +245,13 @@ public class HomeController{
         return "redirect:/rentalMenu";
     }
 
-    //VIEW rENTAL
+    //VIEW RENTAL
     @GetMapping("/viewRental/{rentalid}")
     public String viewRental(@PathVariable("rentalid") int rentalid, Model model){
         Rental rental=rentalService.readRental(rentalid);
         model.addAttribute("rental",rental);
-        model.addAttribute("customer",customerService.viewCustomer(rental.getCustomerid()));
-        model.addAttribute("motorhome",motorhomeService.viewMotorhome(rental.getMotorhomeid()));
+        getMotorhomeById(model, rental.getRentalid());
+        getCustomerById(model, rental.getCustomerid());
         return "/viewRental";
     }
 }
