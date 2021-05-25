@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Nordic Motorhomes - Model Info</title>
     <script src="https://kit.fontawesome.com/1970c128c4.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="/favicon-32x32.png"/>
     <link rel="stylesheet" href="/style.css"/>
     <style>
         #vælgButtonPosition{
@@ -30,14 +31,13 @@
             <thead>
             <th></th>
             <th></th>
-            <th></th>
+
 
             </thead>
             <tbody>
             <tr>
                 <td>Motorhome ID:</td>
                 <td><input type="number" name="motorhomeid" th:value="${motorhome.motorhomeid}"></td>
-
             </tr>
             <tr>
                 <td>Model id:</td>
@@ -46,12 +46,8 @@
             <tr>
                 <td>Plate Number:</td>
                 <td><input type="text" name="platenumber" th:value="${motorhome.platenumber}"></td>
-
             </tr>
 
-
-            <br>
-            <br>
             <div class="addButtonPosition">
                 <input class="normalButton" type="submit" value="Gem Ændringer">
             </div>
