@@ -41,7 +41,7 @@
             <td th:text="${model.beds}"/>
             <td th:text="${model.price}"/>
             <td>
-                <a th:href="@{'/selectedUpdate/'+${model.modelid}}">
+                <a th:href="@{'/selectedUpdate/'+${motorhomeid}+'/'+${model.modelid}}">
                     <button class="normalButton">
                         <i class="fas fa-check-square"></i>
                         Vælg
