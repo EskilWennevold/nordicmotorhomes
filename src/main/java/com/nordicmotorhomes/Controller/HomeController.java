@@ -84,8 +84,7 @@ public class HomeController{
     @GetMapping("/selectedUpdate/{modelid}")
     public String selectedModelUpdate(@PathVariable("modelid") int id){
         motorhomeService.updateMotorhome(motorhomeid, id);
-        motorhomeid = 0;
-        return "redirect:/motorhomeMenu";
+        return "redirect:/updateMotorhome/"+motorhomeid;
     }
     @PostMapping("/updateMotorhome")
     public String updateMotorhome(@ModelAttribute Motorhome m){
