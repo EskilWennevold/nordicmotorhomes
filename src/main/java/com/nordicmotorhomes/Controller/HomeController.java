@@ -63,13 +63,6 @@ public class HomeController{
         getModelById(model, m.getModelid());
         return "/viewMotorhome";
     }
-
-
-
-
-
-
-
     @GetMapping("/updateMotorhome/{motorhomeid}")
     public String updateMotorhome(@PathVariable("motorhomeid") int id, Model model){
         model.addAttribute("motorhomeid", id);
@@ -87,18 +80,6 @@ public class HomeController{
         motorhomeService.updateMotorhomesModel(motorhomeid, id);
         return "redirect:/updateMotorhome/"+motorhomeid;
     }
-
-
-
-
-
-
-
-
-
-
-
-
     @PostMapping("/updateMotorhome")
     public String updateMotorhomeM(@ModelAttribute Motorhome m){
         motorhomeService.updateMotorhome(m.getMotorhomeid(), m);
