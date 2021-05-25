@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordic Motorhomes - Opret Motorhome</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <script src="https://kit.fontawesome.com/1970c128c4.js" crossorigin="anonymous"></script>
+  <style>
+    .tableCreate{
+      margin-left: 400px;
+      margin-top: 3px;
+      width: 670px;
+    }
+    .tilføjKnapPosition{
+      margin-top: 3px;
+      margin-left: 890px;
+    }
+  </style>
+</head>
+<body>
+<div id="page-container">
+  <!-- PLACER ALT HTML I PAGE-CONTAINER DIVEN, SÅLEDES AT FOOTER ALTID STÅR NEDERST PÅ SIEN -->
+  <h1>Nordic Motorhomes</h1>
+  <div class="menu-bar">
+    <ul>
+      <li><a href="/">Hoved Menu</a></li>
+      <li><a href="/motorhomeMenu">Motorhome Menu</a></li>
+      <li><a href="/customerMenu">Kunde Menu</a></li>
+      <li class="active"><a href="/rentalMenu">Udlejnings Menu</a></li>
+      <li><a href="/modelMenu">Model Menu</a></li>
+    </ul>
+  </div>
+  <form action="/createRental" method="post">
+    <table class="tableCreate">
+      <thead>
+      <th><span th:text="${customer.firstname}" /> <span th:text="${customer.lastname}" /></th>
+      <th></th>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Kunde ID:</td>
+        <td><input type="number" name="customerid" th:value="${customer.customerid}" /></td>
+      </tr>
+      <tr>
+        <td>Motorhome ID:</td>
+        <td><input type="text" name="motorhomeid" th:value="${motorhome.motorhomeid}" /></td>
+      </tr>
+      <tr>
+        <td>Start Dato (ÅÅÅÅ-MM-DD):</td>
+        <td><input type="text" name="startdate" placeholder="Start Dato" /></td>
+      </tr>
+      <tr>
+        <td>Slut Dato (ÅÅÅÅ-MM-DD):</td>
+        <td><input type="text" name="enddate" placeholder="Slut Dato" /></td>
+      </tr>
+      <tr>
+        <td>Leveringsadresse:</td>
+        <td><input type="text" name="deliveryaddress" placeholder="Leveringsadresse" /></td>
+      </tr>
+      <tr>
+        <td>Leveringsdistance:</td>
+        <td><input type="number" name="deliverydistance" placeholder="Leveringsdistance" /></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="tilføjKnapPosition">
+      <button class="addButton" type="submit">Tilføj Udlejning</button>
+    </div>
+  </form>
+
+</div>
+<div class="footer">
+  <div class="inner_footer">
+    <div class="logo_container">
+
+    </div>
+
+    <div class="footer_third">
+      <h1>Need help?</h1>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer_third">
+      <h1>Contact us:</h1>
+      <i class="fas fa-phone"></i><p>+45 22 33 44 55</p>
+      <i class="fas fa-envelope-square"></i><p>Nordicmoterhome@email.dk</p>
+    </div>
+    <div class="footer_third">
+      <h1>Follow Us:</h1>
+      <li><i class="fa fa-facebook"></i> </li>
+      <li><i class="fa fa-instagram"></i> </li>
+      <li><i class="fa fa-twitter"></i> </li>
+
+      <span>
+                    Nordic Motorhome Aps
+                    <br>
+                    Denmark
+                    <br>
+                    Værløsevej, 20
+                    <br>
+                    3500 Værløse
+                </span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
