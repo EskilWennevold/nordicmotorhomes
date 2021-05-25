@@ -38,9 +38,9 @@ public class RentalRepo {
         String rentalSql = "SELECT * FROM rentals WHERE rentalid = ?";
         RowMapper<Rental> rentalRowMapper = new BeanPropertyRowMapper<>(Rental.class);
         Rental rental = jdbcTemplate.queryForObject(rentalSql, rentalRowMapper, id);
-        String accesorySql = "SELECT * FROM accessories_rentals WHERE rentalid = ?";
-        RowMapper<Accessory> accessoryRowMapper = new BeanPropertyRowMapper<>(Accessory.class);
-        rental.setAccessories((ArrayList<Accessory>)jdbcTemplate.query(accesorySql, accessoryRowMapper));
+        //String accesorySql = "SELECT * FROM accessories_rentals WHERE rentalid = ?";
+        //RowMapper<Accessory> accessoryRowMapper = new BeanPropertyRowMapper<>(Accessory.class);
+        //rental.setAccessories((ArrayList<Accessory>)jdbcTemplate.query(accesorySql, accessoryRowMapper));
         return rental;
     }
     public void updateRental(Rental r){

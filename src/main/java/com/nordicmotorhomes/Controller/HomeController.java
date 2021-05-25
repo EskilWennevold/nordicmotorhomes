@@ -239,4 +239,13 @@ public class HomeController{
         return "redirect:/rentalMenu";
     }
 
+    //VIEW rENTAL
+    @GetMapping("/viewRental/{rentalid}")
+    public String viewRental(@PathVariable("rentalid") int rentalid, Model model){
+        Rental rental=rentalService.readRental(rentalid);
+        model.addAttribute("rental",rental);
+        model.addAttribute("customer",customerService.viewCustomer(rental.getCustomerid()));
+        model.addAttribute("motorhome",motorhomeService.viewMotorhome(rental.getMotorhomeid()));
+        return "/viewRental";
+    }
 }
