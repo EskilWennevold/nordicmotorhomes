@@ -183,14 +183,14 @@ public class HomeController{
     //VIEW CUSTOMER
     @GetMapping("/viewCustomer/{customerid}")
     public String viewCustomer(@PathVariable("customerid") int id, Model model){
-        model.addAttribute("customer",customerService.readCustomer(id));
+        model.addAttribute("customer",customerService.viewCustomer(id));
         return "/viewCustomer";
     }
 
     //UPDATE CUSTOMER
     @GetMapping("/updateCustomer/{customerid}")
     public String updateCustomer(@PathVariable("customerid") int id, Model model){
-        model.addAttribute("customer",customerService.readCustomer(id));
+        model.addAttribute("customer",customerService.viewCustomer(id));
         return "/updateCustomer";
     }
     @PostMapping("/updateCustomer")
@@ -229,7 +229,7 @@ public class HomeController{
     }
     @GetMapping("/createRental/{customerid}/{motorhomeid}")
     public String createRental(@PathVariable("customerid") int customerid,@PathVariable("motorhomeid") int motorhomeid, Model model){
-        model.addAttribute("customer",customerService.readCustomer(customerid));
+        model.addAttribute("customer",customerService.viewCustomer(customerid));
         model.addAttribute("motorhome",motorhomeService.viewMotorhome(motorhomeid));
         return "/createRental";
     }

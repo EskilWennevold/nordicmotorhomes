@@ -14,11 +14,11 @@ public class CustomerService {
 
     public List<Customer> loadAllCustomers(){ return customerRepo.loadAllCustomers(); }
 
-    public void createCustomer(Customer customer){ customerRepo.createCustomer(customer); }
+    public void createCustomer(Customer c){ customerRepo.createCustomer(c); }
 
-    public Customer readCustomer(int id){ return customerRepo.selectCustomer(id); }
+    public Customer viewCustomer(int id){ return customerRepo.viewCustomer(id); }
 
-    public void updateCustomer(Customer customer){ customerRepo.updateCustomer(customer); }
+    public void updateCustomer(Customer c){ customerRepo.updateCustomer(c); }
 
     public void deleteCustomer(int id){
         customerRepo.deleteCustomer(id);

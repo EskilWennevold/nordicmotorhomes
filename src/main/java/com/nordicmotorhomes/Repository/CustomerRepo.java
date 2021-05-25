@@ -25,7 +25,7 @@ public class CustomerRepo {
         String customerSql="INSERT INTO customers (firstname,lastname,phonenumber,address,zip,email) VALUES (?,?,?,?,?,?)";
         jdbcTemplate.update(customerSql,c.getFirstname(),c.getLastname(),c.getPhonenumber(),c.getAddress(),c.getZip(),c.getEmail());
     }
-    public Customer selectCustomer(int id){
+    public Customer viewCustomer(int id){
         String sql="SELECT * FROM customers JOIN cities USING(zip) WHERE customerid = ?";
         RowMapper<Customer> rowMapper=new BeanPropertyRowMapper<>(Customer.class);
         return jdbcTemplate.queryForObject(sql,rowMapper,id);
