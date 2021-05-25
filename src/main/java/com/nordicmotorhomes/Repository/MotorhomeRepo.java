@@ -34,8 +34,7 @@ public class MotorhomeRepo{
         String sql="UPDATE motorhomes SET modelid=?,platenumber=? WHERE motorhomeid = ?";
         jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber(), id);
     }
-
-    public void updateMotorhome(int motorhomeid, int id){
+    public void updateMotorhomesModel(int motorhomeid, int id){
         String sql="UPDATE motorhomes SET modelid=? WHERE motorhomeid = ?";
         jdbcTemplate.update(sql, id, motorhomeid);
     }

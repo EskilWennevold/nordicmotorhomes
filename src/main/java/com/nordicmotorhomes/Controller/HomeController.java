@@ -78,11 +78,11 @@ public class HomeController{
     }
     @GetMapping("/selectedUpdate/{modelid}")
     public String selectedModelUpdate(@PathVariable("modelid") int id){
-        motorhomeService.updateMotorhome(motorhomeid, id);
+        motorhomeService.updateMotorhomesModel(motorhomeid, id);
         return "redirect:/updateMotorhome/"+motorhomeid;
     }
     @PostMapping("/updateMotorhome")
-    public String updateMotorhome(@ModelAttribute Motorhome m){
+    public String updateMotorhomeM(@ModelAttribute Motorhome m){
         motorhomeService.updateMotorhome(m.getMotorhomeid(), m);
         return "redirect:/motorhomeMenu";
     }
@@ -98,7 +98,6 @@ public class HomeController{
     public Model getModelById(Model model, int id){
         return model.addAttribute("motorhomemodel",motorhomeModelService.viewMotorhomeModel(id));
     }
-
     @GetMapping("/modelMenu")
     public String motorhomemodelMenu(Model model){
         model.addAttribute("motorhomeModels",motorhomeModelService.loadAllMotorhomeModels());
@@ -106,7 +105,6 @@ public class HomeController{
     }
     @GetMapping("/createMotorhomemodel")
     public String createMotorhomemodel(){ return"/createMotorhomemodel"; }
-
     @PostMapping("/createMotorhomemodel")
     public String createMotorhomemodel(@ModelAttribute MotorhomeModel m){
         motorhomeModelService.createMotorhomeModel(m);
@@ -122,13 +120,11 @@ public class HomeController{
         model.addAttribute("motorhomemodel",motorhomeModelService.viewMotorhomeModel(id));
         return "/updateMotorhomemodel";
     }
-
     @PostMapping("/updateMotorhomemodel")
     public String updateMotorhomemodel(@ModelAttribute MotorhomeModel m){
         motorhomeModelService.updateMotorhomeModel(m.getModelid(), m);
         return "redirect:/modelMenu";
     }
-
     @GetMapping("/deleteMotorhomemodel/{modelid}")
     public String deleteMotorhomemodel(@PathVariable("modelid") int id){
         motorhomeModelService.deleteMotorhomeModel(id);
