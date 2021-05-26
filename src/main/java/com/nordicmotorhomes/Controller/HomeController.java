@@ -250,8 +250,10 @@ public class HomeController{
     public String viewRental(@PathVariable("rentalid") int rentalid, Model model){
         Rental rental=rentalService.readRental(rentalid);
         model.addAttribute("rental",rental);
-        getMotorhomeById(model, rental.getRentalid());
+        getMotorhomeById(model, rental.getMotorhomeid());
         getCustomerById(model, rental.getCustomerid());
+        Motorhome motorhome = motorhomeService.viewMotorhome(rental.getMotorhomeid());
+        getModelById(model, motorhome.getModelid());
         return "/viewRental";
     }
 
