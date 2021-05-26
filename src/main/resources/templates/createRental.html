@@ -33,17 +33,17 @@
   <form action="/createRental" method="post">
     <table class="tableCreate">
       <thead>
-      <th><span th:text="${customer.firstname}" /> <span th:text="${customer.lastname}" /></th>
+      <th></th>
       <th></th>
       </thead>
       <tbody>
       <tr>
         <td>Kunde ID:</td>
-        <td><input type="number" name="customerid" th:value="${customer.customerid}" /></td>
+        <td><input type="number" name="customerid" th:value="${customerid}" /></td>
       </tr>
       <tr>
         <td>Motorhome ID:</td>
-        <td><input type="text" name="motorhomeid" th:value="${motorhome.motorhomeid}" /></td>
+        <td><input type="text" name="motorhomeid" th:value="${motorhomeid}" /></td>
       </tr>
       <tr>
         <td>Start Dato (ÅÅÅÅ-MM-DD):</td>
@@ -67,6 +67,7 @@
       </tr>
       </tbody>
     </table>
+
     <div class="tilføjKnapPosition">
       <button class="addButton" type="submit">Tilføj Udlejning</button>
     </div>

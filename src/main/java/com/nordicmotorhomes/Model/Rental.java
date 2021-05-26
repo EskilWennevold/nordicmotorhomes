@@ -12,7 +12,6 @@ public class Rental {
     private int price;
     private int deliverydistance;
     private String season;
-    private ArrayList <Accessory> accessories = new ArrayList<>();
 
     public Rental(){}
 
@@ -86,13 +85,5 @@ public class Rental {
 
     public void setSeason(String season) {
         this.season = season;
-    }
-
-    public ArrayList<Accessory> getAccessories() {
-        return accessories;
-    }
-
-    public void setAccessories(ArrayList<Accessory> accessories) {
-        this.accessories = accessories;
     }
 }

@@ -1,9 +1,6 @@
 package com.nordicmotorhomes.Controller;
 
-import com.nordicmotorhomes.Model.Customer;
-import com.nordicmotorhomes.Model.Motorhome;
-import com.nordicmotorhomes.Model.MotorhomeModel;
-import com.nordicmotorhomes.Model.Rental;
+import com.nordicmotorhomes.Model.*;
 import com.nordicmotorhomes.Service.CustomerService;
 import com.nordicmotorhomes.Service.MotorhomeModelService;
 import com.nordicmotorhomes.Service.MotorhomeService;
@@ -15,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class HomeController{
@@ -235,8 +235,8 @@ public class HomeController{
     }
     @GetMapping("/createRental/{customerid}/{motorhomeid}")
     public String createRental(@PathVariable("customerid") int customerid,@PathVariable("motorhomeid") int motorhomeid, Model model){
-        model.addAttribute("customer",customerService.viewCustomer(customerid));
-        model.addAttribute("motorhome",motorhomeService.viewMotorhome(motorhomeid));
+        model.addAttribute("customerid",customerid);
+        model.addAttribute("motorhomeid",motorhomeid);
         return "/createRental";
     }
     @PostMapping("/createRental")
