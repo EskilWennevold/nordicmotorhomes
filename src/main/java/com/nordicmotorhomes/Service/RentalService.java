@@ -23,4 +23,9 @@ public class RentalService {
     public void deleteRental(int id){
         rentalRepo.deleteRental(id);
     }
+
+    public void selectCustomer(int rentalid,int customerid){ rentalRepo.selectCustomer(rentalid,customerid); }
+
+    public void selectMotorhome(int rentalid,int motorhomeid){ rentalRepo.selectMotorhome(rentalid,motorhomeid); }
+
 }

@@ -53,4 +53,12 @@ public class RentalRepo {
         String accessorySql="DELETE FROM accessories_rentals WHERE rentalid = ?";
         jdbcTemplate.update(accessorySql,id);
     }
+    public void selectCustomer(int rentalid,int customerid){
+        String sql="UPDATE rentals SET customerid=? WHERE rentalid = ?";
+        jdbcTemplate.update(sql,customerid,rentalid);
+    }
+    public void selectMotorhome(int rentalid,int motorhomeid){
+        String sql="UPDATE rentals SET motorhomeid=? WHERE rentalid = ?";
+        jdbcTemplate.update(sql,motorhomeid,rentalid);
+    }
 }

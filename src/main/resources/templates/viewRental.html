@@ -32,6 +32,27 @@
       <td><span th:text="${rental.rentalid}" /></td>
     </tr>
     <tr>
+      <td><b>Start Dato:</b></td>
+      <td><span th:text="${rental.startdate}" /></td>
+    </tr>
+    <tr>
+      <td><b>Slut Dato:</b></td>
+      <td><span th:text="${rental.enddate}" /></td>
+    </tr>
+    <tr>
+      <td>Leveringsadresse:</td>
+      <td><span th:text="${rental.deliveryaddress}" /></td>
+    </tr>
+    <tr>
+      <td>Leveringsdistance:</td>
+      <td><span th:text="${rental.deliverydistance}" /></td>
+    </tr>
+    <tr>
+      <td>Udlejningspris:</td>
+      <td><span th:text="${rental.price}" /></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><b>Customer ID:</b></td>
       <td><span th:text="${customer.customerid}" /></td>
     </tr>
@@ -44,13 +65,51 @@
       <td><span th:text="${customer.lastname}" /></td>
     </tr>
     <tr>
+      <td><b>Telefon Nummer:</b></td>
+      <td><span th:text="${customer.phonenumber}" /></td>
+    </tr>
+    <tr>
+      <td><b>Email:</b></td>
+      <td><span th:text="${customer.email}" /></td>
+    </tr>
+    <tr>
+      <td><b>Adresse:</b></td>
+      <td><span th:text="${customer.address}" /></td>
+    </tr>
+    <tr>
+      <td><b>By:</b></td>
+      <td><span th:text="${customer.zip}"/>, <span th:text="${customer.cityname}"/></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><b>Motorhome ID:</b></td>
       <td><span th:text="${motorhome.motorhomeid}" /></td>
+    </tr>
+    <tr>
+      <td><b>Model ID:</b></td>
+      <td><span th:text="${motorhome.modelid}" /></td>
     </tr>
     <tr>
       <td><b>Registrerings nummer:</b></td>
       <td><span th:text="${motorhome.platenumber}" /></td>
     </tr>
+    <tr>
+      <td><b>Mærke:</b></td>
+      <td><span th:text="${motorhomemodel.brand}" /></td>
+    </tr>
+    <tr>
+      <td><b>Model:</b></td>
+      <td><span th:text="${motorhomemodel.model}" /></td>
+    </tr>
+    <tr>
+      <td><b>Antal Senge:</b></td>
+      <td><span th:text="${motorhomemodel.beds}" /></td>
+    </tr>
+    <tr>
+      <td><b>Motorhome Pris:</b></td>
+      <td><span th:text="${motorhomemodel.price}" /></td>
+    </tr>
+
   </table>
 </div>
 

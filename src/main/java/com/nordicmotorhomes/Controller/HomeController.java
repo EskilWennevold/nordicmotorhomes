@@ -239,13 +239,61 @@ public class HomeController{
         return "redirect:/rentalMenu";
     }
 
-    //VIEW rENTAL
+    //VIEW RENTAL
     @GetMapping("/viewRental/{rentalid}")
     public String viewRental(@PathVariable("rentalid") int rentalid, Model model){
         Rental rental=rentalService.readRental(rentalid);
         model.addAttribute("rental",rental);
         model.addAttribute("customer",customerService.viewCustomer(rental.getCustomerid()));
-        model.addAttribute("motorhome",motorhomeService.viewMotorhome(rental.getMotorhomeid()));
+        Motorhome motorhome=motorhomeService.viewMotorhome(rental.getMotorhomeid());
+        model.addAttribute("motorhome",motorhome);
+        model.addAttribute("motorhomemodel",motorhomeModelService.viewMotorhomeModel(motorhome.getModelid()));
         return "/viewRental";
+    }
+
+    //UPDATE RENTAL
+    @GetMapping("/updateRental/{rentalid}")
+    public String updateRental(@PathVariable("rentalid") int id, Model model){
+        Rental rental=rentalService.readRental(id);
+        model.addAttribute("rental",rental);
+        return "/updateRental";
+    }
+
+    /*
+    @GetMapping("/selectCustomerUpdate/{rentalid}")
+    public String selectCustomerUpdate(@PathVariable("rentalid") int rentalid, Model model){
+        model.addAttribute("rentalid", rentalid);
+        getCustomers(model);
+        return "/selectCustomerUpdate";
+    }
+    @GetMapping("/selectMotorhomeUpdate/{rentalid}")
+    public String selectMotorhomeUpdate(@PathVariable("rentalid") int rentalid, Model model){
+        model.addAttribute("rentalid", rentalid);
+        getMotorhomes(model);
+        return "/selectMotorhomeUpdate";
+    }
+    @GetMapping("/selectedCustomerUpdate/{rentalid}")
+    public String selectedCustomer(@ModelAttribute Customer c,@PathVariable("rentalid")int rentalid){
+        rentalService.selectCustomer(rentalid,c.getCustomerid());
+        return "redirect:/updateRental/"+rentalid;
+    }
+    @GetMapping("/selectedMotorhomeUpdate/{rentalid}")
+    public String selectedMotorhome(@ModelAttribute Motorhome m,@PathVariable("rentalid")int rentalid){
+        rentalService.selectMotorhome(rentalid,m.getMotorhomeid());
+        return "redirect:/updateRental/"+rentalid;
+    }
+    */
+
+    @PostMapping("/updateRental")
+    public String updateRental(@ModelAttribute Rental rental){
+        rentalService.updateRental(rental);
+        return "redirect:/rentalMenu";
+    }
+
+    //DELETE RENTAL
+    @GetMapping("/deleteRental/{rentalid}")
+    public String deleteRental(@PathVariable("rentalid") int id){
+        rentalService.deleteRental(id);
+        return "redirect:/rentalMenu";
     }
 }
