@@ -19,8 +19,8 @@ public class RentalRepo {
         return jdbcTemplate.query(sql,rentalRowMapper);
     }
     public void createRental(Rental r){
-        String rentalSql="INSERT INTO rentals (customerid,motorhomeid,deliveryaddress,startdate,enddate,price,deliverydistance,season) VALUES (?,?,?,?,?,?,?,?)";
-        jdbcTemplate.update(rentalSql,r.getCustomerid(),r.getMotorhomeid(),r.getDeliveryaddress(),r.getStartdate(),r.getEnddate(),r.getPrice(),r.getDeliverydistance(),r.getSeason());
+        String rentalSql="INSERT INTO rentals (customerid,motorhomeid,deliveryaddress,startdate,enddate,price,deliverydistance,season,days) VALUES (?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(rentalSql,r.getCustomerid(),r.getMotorhomeid(),r.getDeliveryaddress(),r.getStartdate(),r.getEnddate(),r.getPrice(),r.getDeliverydistance(),r.getSeason(),r.getDays());
     }
     public Rental readRental(int id){
         String rentalSql = "SELECT * FROM rentals WHERE rentalid = ?";
@@ -29,8 +29,8 @@ public class RentalRepo {
         return rental;
     }
     public void updateRental(Rental r){
-        String sql="UPDATE rentals SET customerid=?,motorhomeid=?,deliveryaddress=?,startdate=?,enddate=?,price=?,deliverydistance=?,season=? WHERE rentalid = ?";
-        jdbcTemplate.update(sql,r.getCustomerid(),r.getMotorhomeid(),r.getDeliveryaddress(),r.getStartdate(),r.getEnddate(),r.getPrice(),r.getDeliverydistance(),r.getSeason(),r.getRentalid());
+        String sql="UPDATE rentals SET customerid=?,motorhomeid=?,deliveryaddress=?,startdate=?,enddate=?,price=?,deliverydistance=?,season=?,days=? WHERE rentalid = ?";
+        jdbcTemplate.update(sql,r.getCustomerid(),r.getMotorhomeid(),r.getDeliveryaddress(),r.getStartdate(),r.getEnddate(),r.getPrice(),r.getDeliverydistance(),r.getSeason(),r.getDays(),r.getRentalid());
     }
     public void deleteRental(int id){
         String rentalSql="DELETE FROM rentals WHERE rentalid = ?";

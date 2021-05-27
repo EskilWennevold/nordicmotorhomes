@@ -241,8 +241,20 @@ public class HomeController{
     }
     @PostMapping("/createRental")
     public String createRental(@ModelAttribute Rental rental){
+        rental.setPrice(calculatePrice(rental));
         rentalService.createRental(rental);
         return "redirect:/rentalMenu";
+    }
+    public int calculatePrice(Rental rental){
+        int price = 0;
+        int modelid = rental.getMotorhomeid();
+        MotorhomeModel m = motorhomeModelService.viewMotorhomeModel(modelid);
+        int days = rental.getDays();
+        int pricePerDay = m.getPrice();
+        int distance = rental.getDeliverydistance();
+        int distancePrice = distance*5;
+        price = days*pricePerDay+distancePrice;
+        return price;
     }
 
     //VIEW RENTAL
@@ -292,6 +304,7 @@ public class HomeController{
 
     @PostMapping("/updateRental")
     public String updateRental(@ModelAttribute Rental rental){
+        rental.setPrice(calculatePrice(rental));
         rentalService.updateRental(rental);
         return "redirect:/rentalMenu";
     }

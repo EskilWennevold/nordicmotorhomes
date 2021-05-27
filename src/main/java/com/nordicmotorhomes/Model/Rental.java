@@ -12,6 +12,7 @@ public class Rental {
     private int price;
     private int deliverydistance;
     private String season;
+    private int days;
 
     public Rental(){}
 
@@ -85,5 +86,13 @@ public class Rental {
 
     public void setSeason(String season) {
         this.season = season;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
 }
