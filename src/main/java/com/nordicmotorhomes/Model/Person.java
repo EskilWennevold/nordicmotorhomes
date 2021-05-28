@@ -1,6 +1,6 @@
 package com.nordicmotorhomes.Model;
 
-public abstract class Person {
+public class Person {
     private String firstname;
     private String lastname;
     private int phonenumber;

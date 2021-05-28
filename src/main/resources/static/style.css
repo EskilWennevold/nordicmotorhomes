@@ -169,6 +169,7 @@ h1 {
     border-radius: 3px;
 
 }
+
 /*Footer*/
 .footer {
     width: 100vw;
@@ -176,7 +177,7 @@ h1 {
     overflow: hidden;
     padding: 20px 0;
     box-sizing: border-box;
-    background-color: gray;
+    background-color: grey;
 }
 .inner_footer {
     display: block;
