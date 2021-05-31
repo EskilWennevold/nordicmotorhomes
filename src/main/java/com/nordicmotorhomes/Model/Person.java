@@ -11,55 +11,24 @@ public class Person {
 
     public Person(){}
 
-    public String getFirstname() {
-        return firstname;
-    }
+    public String getFirstname() { return firstname; }
+    public void setFirstname(String firstname) { this.firstname = firstname; }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
+    public String getLastname() { return lastname; }
+    public void setLastname(String lastname) { this.lastname = lastname; }
 
-    public String getLastname() {
-        return lastname;
-    }
+    public int getPhonenumber() { return phonenumber; }
+    public void setPhonenumber(int phonenumber) { this.phonenumber = phonenumber; }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
 
-    public int getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(int phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getZip() {
-        return zip;
-    }
-
-    public void setZip(int zip) {
-        this.zip = zip;
-    }
+    public int getZip() { return zip; }
+    public void setZip(int zip) { this.zip = zip; }
 
     public String getCityname() { return cityname; }
-
     public void setCityname(String cityname) { this.cityname = cityname; }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 }

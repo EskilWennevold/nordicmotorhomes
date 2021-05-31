@@ -32,7 +32,7 @@ public class HomeController{
 
     //--------------------------------------------MOTORHOMES----------------------------------------------------
 
-    //FOR SELECT MOTORHOME (CREATE AND UPDATE RENTAL)
+    //FOR SELECT MOTORHOME (CREATE AND UPDATE RENTAL
     public Model getMotorhomes(Model model){
         return model.addAttribute("motorhomes",motorhomeService.loadAllMotorhomes());
     }

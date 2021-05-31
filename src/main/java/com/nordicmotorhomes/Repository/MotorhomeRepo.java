@@ -22,7 +22,6 @@ public class MotorhomeRepo{
     }
     public void createMotorhome(Motorhome m){
         String sql="INSERT INTO motorhomes (modelid,platenumber) VALUES (?,?)";
-
         jdbcTemplate.update(sql,m.getModelid(),m.getPlatenumber());
     }
     public Motorhome viewMotorhome(int id){

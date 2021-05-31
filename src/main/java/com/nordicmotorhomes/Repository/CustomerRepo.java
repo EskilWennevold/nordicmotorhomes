@@ -20,8 +20,6 @@ public class CustomerRepo {
         return jdbcTemplate.query(sql,rowMapper);
     }
     public void createCustomer(Customer c){
-        //String citySql="INSERT INTO cities (zip,city) VALUES (?,?) WHERE NOT EXIST (SELECT * FROM cities WHERE zip=? AND city=?)";
-        //jdbcTemplate.update(citySql,c.getZip(),c.getCity(),c.getZip(),c.getCity());
         String customerSql="INSERT INTO customers (firstname,lastname,phonenumber,address,zip,email) VALUES (?,?,?,?,?,?)";
         jdbcTemplate.update(customerSql,c.getFirstname(),c.getLastname(),c.getPhonenumber(),c.getAddress(),c.getZip(),c.getEmail());
     }
