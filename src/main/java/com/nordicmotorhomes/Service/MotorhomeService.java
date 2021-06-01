@@ -13,14 +13,9 @@ public class MotorhomeService {
     MotorhomeRepo motorhomeRepo;
 
     public List<Motorhome> loadAllMotorhomes(){ return motorhomeRepo.loadAllMotorhomes(); }
-
     public void createMotorhome(Motorhome m){ motorhomeRepo.createMotorhome(m); }
-
     public Motorhome viewMotorhome(int id){ return motorhomeRepo.viewMotorhome(id); }
-
     public void updateMotorhome(int id, Motorhome m){ motorhomeRepo.updateMotorhome(id, m); }
-
     public void updateMotorhomesModel(int motorhomeid, int id){ motorhomeRepo.updateMotorhomesModel(motorhomeid, id); }
-
     public void deleteMotorhome(int id){ motorhomeRepo.deleteMotorhome(id); }
 }

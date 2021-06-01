@@ -13,19 +13,13 @@ public class RentalService {
     RentalRepo rentalRepo;
 
     public List<Rental> loadAllRentals(){ return rentalRepo.loadAllRentals(); }
-
     public void createRental(Rental rental){ rentalRepo.createRental(rental); }
-
     public Rental readRental(int id){ return rentalRepo.readRental(id); }
-
     public void updateRental(Rental rental){ rentalRepo.updateRental(rental); }
-
     public void deleteRental(int id){
         rentalRepo.deleteRental(id);
     }
-
     public void selectCustomer(int rentalid,int customerid){ rentalRepo.selectCustomer(rentalid,customerid); }
-
     public void selectMotorhome(int rentalid,int motorhomeid){ rentalRepo.selectMotorhome(rentalid,motorhomeid); }
 
 }

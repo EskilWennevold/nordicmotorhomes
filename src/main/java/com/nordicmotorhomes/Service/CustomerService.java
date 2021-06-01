@@ -13,13 +13,9 @@ public class CustomerService {
     CustomerRepo customerRepo;
 
     public List<Customer> loadAllCustomers(){ return customerRepo.loadAllCustomers(); }
-
     public void createCustomer(Customer c){ customerRepo.createCustomer(c); }
-
     public Customer viewCustomer(int id){ return customerRepo.viewCustomer(id); }
-
     public void updateCustomer(Customer c){ customerRepo.updateCustomer(c); }
-
     public void deleteCustomer(int id){
         customerRepo.deleteCustomer(id);
     }
