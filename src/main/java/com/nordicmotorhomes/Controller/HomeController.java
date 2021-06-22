@@ -226,7 +226,9 @@ public class HomeController{
     }
     public int calculatePrice(Rental rental){
         int price = 0;
-        int modelid = rental.getMotorhomeid();
+        int motorhomeid = rental.getMotorhomeid();
+        Motorhome sm = motorhomeService.viewMotorhome(motorhomeid);
+        int modelid = sm.getModelid();
         MotorhomeModel m = motorhomeModelService.viewMotorhomeModel(modelid);
         int days = rental.getDays();
         int pricePerDay = m.getPrice();
