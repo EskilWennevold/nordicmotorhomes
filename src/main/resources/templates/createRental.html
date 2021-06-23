@@ -5,6 +5,11 @@
   <title>Nordic Motorhomes - Opret Motorhome</title>
   <link rel="stylesheet" href="/style.css"/>
   <script src="https://kit.fontawesome.com/1970c128c4.js" crossorigin="anonymous"></script>
+  <script>
+    function goBack(){
+      window.history.back();
+    }
+  </script>
   <style>
     .tableCreate{
       margin-left: 400px;
@@ -14,6 +19,7 @@
     .tilføjKnapPosition{
       margin-top: 3px;
       margin-left: 890px;
+      float: left;
     }
   </style>
 </head>
@@ -73,7 +79,12 @@
     </div>
   </form>
 
+  <div class="createBackPosition">
+    <button class="backButton" onclick="goBack()">Tilbage</button>
+  </div>
+
 </div>
+
 <div class="footer">
   <div class="inner_footer">
     <div class="logo_container">

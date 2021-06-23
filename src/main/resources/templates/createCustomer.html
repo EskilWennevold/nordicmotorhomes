@@ -5,6 +5,11 @@
     <title>Nordic Motorhomes - Opret Kunde</title>
     <link rel="stylesheet" href="/style.css"/>
     <script src="https://kit.fontawesome.com/1970c128c4.js" crossorigin="anonymous"></script>
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
     <link rel="shortcut icon" type="image/png" href="/favicon-32x32.png"/>
     <style>
         .tableCreate{
@@ -15,12 +20,14 @@
         .tilføjKnapPosition{
             margin-top: 3px;
             margin-left: 890px;
+            float: left;
         }
     </style>
 </head>
 <body>
+
 <div id="page-container">
-    <!-- PLACER ALT HTML I PAGE-CONTAINER DIVEN, SÅLEDES AT FOOTER ALTID STÅR NEDERST PÅ SIEN -->
+    <!-- PLACER ALT HTML I PAGE-CONTAINER DIVEN, SÅLEDES AT FOOTER ALTID STÅR NEDERST PÅ SIDEN -->
     <h1>Nordic Motorhomes</h1>
     <div class="menu-bar">
         <ul>
@@ -31,6 +38,7 @@
             <li><a href="/modelMenu">Model Menu</a></li>
         </ul>
     </div>
+
     <form action="/createCustomer" method="post">
         <table class="tableCreate">
             <thead>
@@ -68,7 +76,13 @@
             <button class="addButton" type="submit">Tilføj Kunde</button>
         </div>
     </form>
+
+    <div class="createBackPosition">
+        <button class="backButton" onclick="goBack()">Tilbage</button>
+    </div>
+
 </div>
+
 <div class="footer">
     <div class="inner_footer">
         <div class="logo_container">
@@ -103,5 +117,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

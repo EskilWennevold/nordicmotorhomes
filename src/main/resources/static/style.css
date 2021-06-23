@@ -30,7 +30,7 @@ h1 {
     box-shadow: 0 0 20px rgba(0 0 0 0.15);
 }
 .tableMenu thead tr{
-    background-color: #009879;
+    background-color: grey;
     color: whitesmoke;
     text-align: left;
     font-weight: bold;
@@ -46,7 +46,7 @@ h1 {
     background-color: wheat;
 }
 .tableMenu tr:last-of-type{
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid grey;
 }
 /*Create Tabellerne*/
 .tableCreate{
@@ -60,7 +60,7 @@ h1 {
     box-shadow: 0 0 20px rgba(0 0 0 0.15);
 }
 .tableCreate thead tr{
-    background-color: #009879;
+    background-color: grey;
     color: whitesmoke;
     text-align: left;
     font-weight: bold;
@@ -88,7 +88,7 @@ h1 {
     box-shadow: 0 0 20px rgba(0 0 0 0.15);
 }
 .tableView thead tr{
-    background-color: #009879;
+    background-color: grey;
     color: whitesmoke;
     text-align: left;
     font-weight: bold;
@@ -104,9 +104,29 @@ h1 {
     background-color: wheat;
 }
 .tableView tr:last-of-type{
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid grey;
 }
 /*Knapperne*/
+#vælgButtonPosition{
+    margin-top: 30px;
+    margin-left: 300px;
+    max-width: 200px;
+    float: left;
+}
+.selectMoreButton{
+    background: grey;
+    display: inline-flex;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+}
+.saveChangesPosition{
+    margin-top: 30px;
+    margin-left: 400px;
+    max-width: 200px;
+    float: left;
+}
 .addButtonPosition{
     margin-top: 30px;
     margin-left: 400px;
@@ -128,7 +148,6 @@ h1 {
     padding: 5px 10px;
     border-radius: 10px;
     color: white;
-
 }
 .deleteButton{
     background: #d61916;
@@ -144,6 +163,35 @@ h1 {
     margin-left: 800px;
     max-width: 200px;
 }
+.backButton{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+}
+.backButton:hover{
+    background-color: #ddd;
+    color: black;
+}
+div.seInfoBackPosition {
+    position: absolute;
+    right: 445px;
+}
+div.updateInfoBackPosition{
+    position: absolute;
+    right: 1040px;
+}
+div.selectBackPosition{
+    position: absolute;
+    right: 1080px;
+}
+div.createBackPosition{
+    position: absolute;
+    right: 1030px;
+    float: left;
+}
+
 /*Menu Headeren*/
 .menu-bar {
     background: grey;
@@ -237,4 +285,15 @@ h1 {
     display: block;
     width: 100%;
     padding-top: 20px;
+}
+.fade-in-text {
+    color: white;
+    font-size:70px;
+    text-align: center;
+    line-height: 500px;
+    animation: fadeIn linear 2s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity: 1;}
 }
