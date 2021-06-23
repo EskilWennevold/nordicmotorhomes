@@ -40,17 +40,17 @@
     <form action="/createMotorhome" method="post">
         <table class="tableCreate">
             <thead>
-            <th><span th:text="${motorhomemodel.brand}" /> <span th:text="${motorhomemodel.model}" /></th>
+            <th><span th:text="${motorhomemodel.brand}" /> <span th:text="${motorhomemodel.model}"/></th>
             <th></th>
             </thead>
             <tbody>
             <tr>
                 <td>Model ID:</td>
-                <td><input type="number" name="modelid" th:value="${motorhomemodel.modelid}" /></td>
+                <td><input type="number" name="modelid" th:value="${motorhomemodel.modelid}" required/></td>
             </tr>
             <tr>
                 <td>Registrerings Nummer:</td>
-                <td><input type="text" name="platenumber" placeholder="XX 00 000"></td>
+                <td><input type="text" name="platenumber" placeholder="XX 00 000" required></td>
             </tr>
             </tbody>
         </table>

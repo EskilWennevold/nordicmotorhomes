@@ -34,23 +34,23 @@
                 <tbody>
                 <tr>
                     <td>Model ID:</td>
-                    <td><input type="number" name="modelid" th:value="${motorhomemodel.modelid}"></td>
+                    <td><input type="number" name="modelid" th:value="${motorhomemodel.modelid}" readonly></td>
                 </tr>
                 <tr>
                     <td>Motorhome Model:</td>
-                    <td><input type="text" name="brand" th:value="${motorhomemodel.brand}"></td>
+                    <td><input type="text" name="brand" th:value="${motorhomemodel.brand}" required></td>
                 </tr>
                 <tr>
                     <td>Motorhome Brand:</td>
-                    <td><input type="text" name="model" th:value="${motorhomemodel.model}"></td>
+                    <td><input type="text" name="model" th:value="${motorhomemodel.model}" required></td>
                 </tr>
                 <tr>
                     <td>Antal senge:</td>
-                    <td><input type="number" name="beds" th:value="${motorhomemodel.beds}"></td>
+                    <td><input type="number" name="beds" th:value="${motorhomemodel.beds}" required></td>
                 </tr>
                 <tr>
                     <td>Prisen:</td>
-                    <td><input type="number" name="price" th:value="${motorhomemodel.price}"></td>
+                    <td><input type="number" name="price" th:value="${motorhomemodel.price}" required></td>
                 </tr>
 
                 <br>

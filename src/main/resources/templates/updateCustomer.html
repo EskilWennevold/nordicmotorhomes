@@ -42,32 +42,32 @@
       <tbody>
       <tr>
         <td>Kunde ID:</td>
-        <td><input type="number" name="customerid" th:value="${customer.customerid}"></td>
+        <td><input type="number" name="customerid" th:value="${customer.customerid}" readonly></td>
 
       </tr>
       <tr>
         <td>Fornavn:</td>
-        <td><input type="text" name="firstname" th:value="${customer.firstname}"></td>
+        <td><input type="text" name="firstname" th:value="${customer.firstname}" required></td>
       </tr>
       <tr>
         <td>Efternavn:</td>
-        <td><input type="text" name="lastname" th:value="${customer.lastname}"></td>
+        <td><input type="text" name="lastname" th:value="${customer.lastname}" required></td>
       </tr>
       <tr>
         <td>Telefon Nummer:</td>
-        <td><input type="number" name="phonenumber" th:value="${customer.phonenumber}"></td>
+        <td><input type="number" name="phonenumber" th:value="${customer.phonenumber}" required></td>
       </tr>
       <tr>
         <td>Email:</td>
-        <td><input type="text" name="email" th:value="${customer.email}"></td>
+        <td><input type="text" name="email" th:value="${customer.email}" required></td>
       </tr>
       <tr>
         <td>Adresse:</td>
-        <td><input type="text" name="address" th:value="${customer.address}"></td>
+        <td><input type="text" name="address" th:value="${customer.address}" required></td>
       </tr>
       <tr>
         <td>Postnummer:</td>
-        <td><input type="number" name="zip" th:value="${customer.zip}"></td>
+        <td><input type="number" name="zip" th:value="${customer.zip}" required></td>
       </tr>
 
       <br>

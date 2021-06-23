@@ -42,35 +42,35 @@
       <tbody>
       <tr>
         <td>Udlejnings ID:</td>
-        <td><input type="number" name="rentalid" th:value="${rental.rentalid}"></td>
+        <td><input type="number" name="rentalid" th:value="${rental.rentalid}" readonly></td>
       </tr>
       <tr>
         <td><b>Customer ID:</b></td>
-        <td><input type="number" name="customerid" th:value="${rental.customerid}"></td>
+        <td><input type="number" name="customerid" th:value="${rental.customerid}" required></td>
       </tr>
       <tr>
         <td><b>Motorhome ID:</b></td>
-        <td><input type="number" name="motorhomeid" th:value="${rental.motorhomeid}"></td>
+        <td><input type="number" name="motorhomeid" th:value="${rental.motorhomeid}" required></td>
       </tr>
       <tr>
         <td>Start Dato (ÅÅÅÅ-MM-DD):</td>
-        <td><input type="text" name="startdate" th:value="${rental.startdate}" /></td>
+        <td><input type="text" name="startdate" th:value="${rental.startdate}" required /></td>
       </tr>
       <tr>
         <td>Slut Dato (ÅÅÅÅ-MM-DD):</td>
-        <td><input type="text" name="enddate" th:value="${rental.enddate}" /></td>
+        <td><input type="text" name="enddate" th:value="${rental.enddate}" required/></td>
       </tr>
       <tr>
         <td>Leveringsadresse:</td>
-        <td><input type="text" name="deliveryaddress" th:value="${rental.deliveryaddress}" /></td>
+        <td><input type="text" name="deliveryaddress" th:value="${rental.deliveryaddress}" required/></td>
       </tr>
       <tr>
         <td>Leveringsdistance:</td>
-        <td><input type="number" name="deliverydistance" th:value="${rental.deliverydistance}" /></td>
+        <td><input type="number" name="deliverydistance" th:value="${rental.deliverydistance}" required/></td>
       </tr>
       <tr>
         <td>Udlejningsdage:</td>
-        <td><input type="number" name="days" th:value="${rental.days}"/></td>
+        <td><input type="number" name="days" th:value="${rental.days}" required/></td>
       </tr>
 
       <div class="addButtonPosition">
