@@ -13,6 +13,7 @@ import java.util.List;
 public class MotorhomeModelRepo {
     @Autowired
     JdbcTemplate jdbcTemplate;
+
     public List<MotorhomeModel> loadAllMotorhomeModels(){
         String sql="SELECT * FROM motorhomemodels";
         RowMapper<MotorhomeModel> rowMapper=new BeanPropertyRowMapper<>(MotorhomeModel.class);

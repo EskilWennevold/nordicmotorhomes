@@ -11,6 +11,7 @@ import java.util.List;
 public class MotorhomeModelService {
     @Autowired
     MotorhomeModelRepo motorhomeModelRepo;
+
     public List<MotorhomeModel> loadAllMotorhomeModels(){
         return motorhomeModelRepo.loadAllMotorhomeModels();
     }
